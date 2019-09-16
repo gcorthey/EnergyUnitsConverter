@@ -438,6 +438,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(500, 179);
             this.richTextBox1.TabIndex = 44;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // groupBox1
             // 
@@ -520,6 +521,7 @@
             this.kJTextBox.TabIndex = 47;
             this.kJTextBox.Text = "0";
             this.kJTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.kJTextBox.TextChanged += new System.EventHandler(this.kJTextBox_TextChanged);
             // 
             // label20
             // 
@@ -540,6 +542,7 @@
             this.HzTextBox.TabIndex = 45;
             this.HzTextBox.Text = "0";
             this.HzTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.HzTextBox.TextChanged += new System.EventHandler(this.HzTextBox_TextChanged);
             // 
             // label19
             // 
@@ -560,6 +563,7 @@
             this.sTextBox.TabIndex = 43;
             this.sTextBox.Text = "0";
             this.sTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.sTextBox.TextChanged += new System.EventHandler(this.sTextBox_TextChanged);
             // 
             // label17
             // 
@@ -580,7 +584,7 @@
             this.mTextBox.TabIndex = 37;
             this.mTextBox.Text = "0";
             this.mTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mTextBox.TextChanged += new System.EventHandler(this.umTextBox_TextChanged);
+            this.mTextBox.TextChanged += new System.EventHandler(this.mTextBox_TextChanged);
             // 
             // Form1
             // 

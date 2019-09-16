@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace UnitConverter
 {
@@ -209,7 +202,7 @@ namespace UnitConverter
                         fsTextBox.Text = String.Format("{0:0.00000E+00}", valuefs);
                     }
                 }
-                if (!fsTextBox.Focused)
+                if (!psTextBox.Focused)
                 {
                     psTextBox.Text = String.Format("{0:0.00000}", valueps);
                     if (valueps < 1e-3 | valueps > 1e5)
@@ -345,7 +338,7 @@ namespace UnitConverter
             {
                 try
                 {
-                    valuenm = planckConstantJ / 4.186 * speedOfLight / Convert.ToDouble(JTextBox.Text) * 1e9;
+                    valuenm = planckConstantJ * speedOfLight / Convert.ToDouble(JTextBox.Text) * 1e9;
                     CalculateValues();
                 }
                 catch
@@ -437,7 +430,7 @@ namespace UnitConverter
             {
                 try
                 {
-                    valuenm = speedOfLight / (Convert.ToDouble(THzTextBox.Text) * 1e9) * 1e9;
+                    valuenm = speedOfLight / (Convert.ToDouble(GHzTextBox.Text) * 1e9) * 1e9;
                     CalculateValues();
                 }
                 catch
@@ -465,7 +458,18 @@ namespace UnitConverter
 
         private void umTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            if (umTextBox.Focused)
+            {
+                try
+                {
+                    valuenm = Convert.ToDouble(umTextBox.Text) * 1000;
+                    CalculateValues();
+                }
+                catch
+                {
+                    return;
+                }
+            }
         }
 
         private void trackBarGral_Scroll(object sender, EventArgs e)
@@ -483,119 +487,75 @@ namespace UnitConverter
                 }
             }
         }
+
+        private void sTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (sTextBox.Focused)
+            {
+                try
+                {
+                    valuenm = Convert.ToDouble(sTextBox.Text) * speedOfLight * 1e9;
+                    CalculateValues();
+                }
+                catch
+                {
+                    return;
+                }
+            }
+        }
+
+        private void HzTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (HzTextBox.Focused)
+            {
+                try
+                {
+                    valuenm = speedOfLight / (Convert.ToDouble(HzTextBox.Text)) * 1e9;
+                    CalculateValues();
+                }
+                catch
+                {
+                    return;
+                }
+            }
+        }
+
+        private void kJTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (kJTextBox.Focused)
+            {
+                try
+                {
+                    valuenm = planckConstantJ * speedOfLight / Convert.ToDouble(kJTextBox.Text) * 1e-3 * 1e9;
+                    CalculateValues();
+                }
+                catch
+                {
+                    return;
+                }
+            }
+        }
+
+        private void mTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (mTextBox.Focused)
+            {
+                try
+                {
+                    valuenm = Convert.ToDouble(mTextBox.Text) * 1e9;
+                    CalculateValues();
+                }
+                catch
+                {
+                    return;
+                }
+            }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
-
-
-/* This code comes from Academo.org */
-//var demo = new Demo({
-//    ui: {
-//        wavelength: {
-//          title: "Wavelength",
-//          value: 500,
-//          units: "nm",
-//          range:[380,780],
-//          resolution:1
-//        }
-//    },
-//    color:null,
-//    init: function(){
-//        $('#demo').append("<div id='color_display'></div>");
-//        $('#ui-container').append("<div id='color'></div>");
-//        this.update();
-//    },
-//    update: function(e){
-//        this.color = this.nmToRGB(this.ui.wavelength.value);
-//        $("#color_display").css("background-color", this.rgbToHex(this.color));
-//        $("#color").html("<p><span>Color:</span><br />rgb("+ this.color[0] +","+ this.color[1] + ", "+ this.color[2] +")<br />Hex: " + this.rgbToHex(this.color) + "</p>");
-//    },
-//    nmToRGB: function(wavelength){
-//        var Gamma = 0.80,
-//        IntensityMax = 255,
-//        factor, red, green, blue;
-//        if((wavelength >= 380) && (wavelength<440)){
-//            red = -(wavelength - 440) / (440 - 380);
-//            green = 0.0;
-//            blue = 1.0;
-//        }else if((wavelength >= 440) && (wavelength<490)){
-//            red = 0.0;
-//            green = (wavelength - 440) / (490 - 440);
-//            blue = 1.0;
-//        }else if((wavelength >= 490) && (wavelength<510)){
-//            red = 0.0;
-//            green = 1.0;
-//            blue = -(wavelength - 510) / (510 - 490);
-//        }else if((wavelength >= 510) && (wavelength<580)){
-//            red = (wavelength - 510) / (580 - 510);
-//            green = 1.0;
-//            blue = 0.0;
-//        }else if((wavelength >= 580) && (wavelength<645)){
-//            red = 1.0;
-//            green = -(wavelength - 645) / (645 - 580);
-//            blue = 0.0;
-//        }else if((wavelength >= 645) && (wavelength<781)){
-//            red = 1.0;
-//            green = 0.0;
-//            blue = 0.0;
-//        }else{
-//            red = 0.0;
-//            green = 0.0;
-//            blue = 0.0;
-//        };
-//        // Let the intensity fall off near the vision limits
-//        if((wavelength >= 380) && (wavelength<420)){
-//            factor = 0.3 + 0.7*(wavelength - 380) / (420 - 380);
-//        }else if((wavelength >= 420) && (wavelength<701)){
-//            factor = 1.0;
-//        }else if((wavelength >= 701) && (wavelength<781)){
-//            factor = 0.3 + 0.7*(780 - wavelength) / (780 - 700);
-//        }else{
-//            factor = 0.0;
-//        };
-//        if (red !== 0){
-//            red = Math.round(IntensityMax * Math.pow(red * factor, Gamma));
-//        }
-//        if (green !== 0){
-//            green = Math.round(IntensityMax * Math.pow(green * factor, Gamma));
-//        }
-//        if (blue !== 0){
-//            blue = Math.round(IntensityMax * Math.pow(blue * factor, Gamma));
-//        }
-//        return [red,green,blue];
-//    },
-//    toHex: function(number){
-//        //converts a decimal number into hex format
-//        var hex =  number.toString(16);
-//        if (hex.length < 2){
-//            hex = "0" + hex;
-//        }
-//        return hex;
-//    },
-//    rgbToHex: function(color){
-//        //takes an 3 element array (r,g,b) and returns a hexadecimal color
-//        var hexString = '#';
-//        for (var i = 0 ; i < 3 ; i++){
-//            hexString += this.toHex(color[i]);
-//        }
-//        return hexString;
-//    },
-//    // renderRainbow: function(){
-//    //     //render all the colours - used to generate the thumbnail image
-//    //     var canvas = document.createElement('canvas');
-//    //     var ctx = canvas.getContext("2d");
-//    //     canvas.width = 870;
-//    //     canvas.height = 400;
-//    //     $("#demo").append(canvas);
-//    //     for (var i = 0 ; i < canvas.width ; i++){
-//    //         ctx.fillStyle = this.rgbToHex(this.nmToRGB(this.map(i, 0, canvas.width, this.ui.wavelength.range[0], this.ui.wavelength.range[1])));
-//    //         ctx.fillRect(i, 0, 1, canvas.height);
-//    //         ctx.fill();
-//    //     }
-//    // },
-//    // map: function(value, minFrom, maxFrom, minTo, maxTo){
-//    //     //http://stackoverflow.com/questions/4154969/how-to-map-numbers-in-range-099-to-range-1-01-0
-//    //     return minTo + (maxTo - minTo) * ((value - minFrom) / (maxFrom - minFrom));
-//    // }
-//});
-					
+	
