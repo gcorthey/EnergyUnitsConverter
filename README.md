@@ -5,9 +5,9 @@ Feel free to contribute to it ! And, if you find any bug, please add an Issue [h
 
 Here you can see some screenshots:
 
-![Screenshot](units_converter_screenshot_1.png "Screenshot")
+![Screenshot](/figures/screenshot2 "Screenshot")
 
-![Screenshot](units_converter_screenshot_2.png "Screenshot")
+![Screenshot](/figures/screenshot1 "Screenshot")
 
 
 
