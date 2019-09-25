@@ -5,9 +5,9 @@ Feel free to contribute to it ! And, if you find any bug, please add an Issue [h
 
 Here you can see some screenshots:
 
-![Screenshot](https://github.com/gcorthey/EnergyUnitsConverter/tree/master/Figures/screenshot2.png "Screenshot")
+![Screenshot](https://github.com/gcorthey/EnergyUnitsConverter/tree/master/Figures/screenshot2.png)
 
-![Screenshot](https://github.com/gcorthey/EnergyUnitsConverter/tree/master/Figures/screenshot1.png "Screenshot")
+![Screenshot](https://github.com/gcorthey/EnergyUnitsConverter/tree/master/Figures/screenshot1.png)
 
 
 
