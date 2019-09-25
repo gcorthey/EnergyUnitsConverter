@@ -699,6 +699,7 @@
             // 
             // wavenumberBandTextBox
             // 
+            this.wavenumberBandTextBox.Enabled = false;
             this.wavenumberBandTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wavenumberBandTextBox.Location = new System.Drawing.Point(227, 48);
             this.wavenumberBandTextBox.Name = "wavenumberBandTextBox";
@@ -762,6 +763,7 @@
             // 
             // wavelengthBandTextBox
             // 
+            this.wavelengthBandTextBox.Enabled = false;
             this.wavelengthBandTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wavelengthBandTextBox.Location = new System.Drawing.Point(227, 16);
             this.wavelengthBandTextBox.Name = "wavelengthBandTextBox";

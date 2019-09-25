@@ -30,52 +30,12 @@ namespace UnitConverter
         private double valueps;
         private double valueas;
 
-        private double valuenmBand;
-        private double valueWavenumberBand;
         private double valueBandwidthnm;
         private double valueBandwidthcm;
 
         private int valueBar;
         private int valueBarGral;
 
-
-        private void CalculateValuesBandwidth()
-        {
-            valueWavenumberBand = 1 / (1e-7 * valuenmBand);
-            valueBandwidthcm = valueBandwidthnm / (valuenmBand * valuenmBand) * 1e7;
-
-
-
-
-            if (!wavelengthBandTextBox.Focused && !bandwidthNmTextBox.Focused)
-            {
-                wavelengthBandTextBox.Text = String.Format("{0:0.00000}", valuenmBand);
-                if (valuenm < 1e-3 | valuenm > 1e5)
-                {
-                    wavenumberBandTextBox.Text = String.Format("{0:0.00000E+00}", valuenmBand);
-                }
-
-                bandwidthNmTextBox.Text = String.Format("{0:0.00000}", valueBandwidthnm);
-                if (valuenm < 1e-3 | valuenm > 1e5)
-                {
-                    bandwidthNmTextBox.Text = String.Format("{0:0.00000E+00}", valueBandwidthnm);
-                }
-            }
-
-            if (!wavenumberBandTextBox.Focused && !bandwidthCmTextBox.Focused)
-            {
-                wavenumberBandTextBox.Text = String.Format("{0:0.00000}", valueWavenumberBand);
-                if (valuenm < 1e-3 | valuenm > 1e5)
-                {
-                    wavenumberBandTextBox.Text = String.Format("{0:0.00000E+00}", valueWavenumberBand);
-                }
-                bandwidthCmTextBox.Text = String.Format("{0:0.00000}", valueBandwidthcm);
-                if (valuenm < 1e-3 | valuenm > 1e5)
-                {
-                    bandwidthCmTextBox.Text = String.Format("{0:0.00000E+00}", valueBandwidthcm);
-                }
-            }
-        }
 
         private void CalculateValues()
         {
@@ -102,6 +62,39 @@ namespace UnitConverter
 
                 valueBar = (int)((valuenm - 380) * 1000 / 400);
                 valueBarGral = (int)((Math.Log10(valuenm) + 6) * 1000 / (18));
+
+                valueBandwidthcm = valueBandwidthnm / (valuenm * valuenm) * 1e7;
+
+                
+
+                if (!wavelengthBandTextBox.Focused && !bandwidthNmTextBox.Focused)
+                {
+                    wavelengthBandTextBox.Text = String.Format("{0:0.00000}", valuenm);
+                    if (valuenm < 1e-3 | valuenm > 1e5)
+                    {
+                        wavenumberBandTextBox.Text = String.Format("{0:0.00000E+00}", valuenm);
+                    }
+
+                    bandwidthNmTextBox.Text = String.Format("{0:0.00000}", valueBandwidthnm);
+                    if (valuenm < 1e-3 | valuenm > 1e5)
+                    {
+                        bandwidthNmTextBox.Text = String.Format("{0:0.00000E+00}", valueBandwidthnm);
+                    }
+                }
+
+                if (!wavenumberBandTextBox.Focused && !bandwidthCmTextBox.Focused)
+                {
+                    wavenumberBandTextBox.Text = String.Format("{0:0.00000}", valuecm);
+                    if (valuenm < 1e-3 | valuenm > 1e5)
+                    {
+                        wavenumberBandTextBox.Text = String.Format("{0:0.00000E+00}", valuecm);
+                    }
+                    bandwidthCmTextBox.Text = String.Format("{0:0.00000}", valueBandwidthcm);
+                    if (valuenm < 1e-3 | valuenm > 1e5)
+                    {
+                        bandwidthCmTextBox.Text = String.Format("{0:0.00000E+00}", valueBandwidthcm);
+                    }
+                }
 
 
 
@@ -303,7 +296,7 @@ namespace UnitConverter
                 try
                 {
                     valuenm = Convert.ToDouble(trackBarVisible.Value) * 400 / 1000 + 380;
-                    CalculateValues();                    
+                    CalculateValues();
                 }
                 catch
                 {
@@ -319,9 +312,10 @@ namespace UnitConverter
             double wavelength = Convert.ToDouble(rndValue) * 400 / 1000 + 380;
             //double wavelength = Math.Pow(10, Convert.ToDouble(rndValue) * 18 / 1000 - 6);
             nmTextBox.Text = string.Format("{0:0.00000}", wavelength);
+            wavelengthBandTextBox.Text = string.Format("{0:0.00000}", wavelength);
             try
             {
-                valuenm = wavelength;
+                valuenm = wavelength;                
                 CalculateValues();
             }
             catch
@@ -344,6 +338,8 @@ namespace UnitConverter
                     return;
                 }
             }
+
+            wavelengthBandTextBox.Text = ATextBox.Text;
         }
 
         private void meVTextBox_TextChanged(object sender, EventArgs e)
@@ -614,8 +610,8 @@ namespace UnitConverter
             {
                 try
                 {
-                    valuenmBand = Convert.ToDouble(wavelengthBandTextBox.Text);
-                    CalculateValuesBandwidth();
+                    valuenm = Convert.ToDouble(wavelengthBandTextBox.Text);
+                    CalculateValues();
                 }
                 catch
                 {
@@ -631,7 +627,7 @@ namespace UnitConverter
                 try
                 {
                     valueBandwidthnm = Convert.ToDouble(bandwidthNmTextBox.Text);
-                    CalculateValuesBandwidth();
+                    CalculateValues();
                 }
                 catch
                 {
@@ -646,8 +642,8 @@ namespace UnitConverter
             {
                 try
                 {
-                    valuenmBand = 1 / (1e-7 * Convert.ToDouble(wavenumberBandTextBox.Text));
-                    CalculateValuesBandwidth();
+                    valuenm = 1 / (1e-7 * Convert.ToDouble(wavenumberBandTextBox.Text));
+                    CalculateValues();
                 }
                 catch
                 {
@@ -662,10 +658,10 @@ namespace UnitConverter
             {
                 try
                 {
-                    valueBandwidthcm = valueBandwidthnm / (valuenmBand * valuenmBand) * 1e7;
+                    valueBandwidthcm = valueBandwidthnm / (valuenm * valuenm) * 1e7;
  
-                    valueBandwidthnm = Convert.ToDouble(bandwidthCmTextBox.Text) * valuenmBand * valuenmBand * 1e-7; 
-                    CalculateValuesBandwidth();
+                    valueBandwidthnm = Convert.ToDouble(bandwidthCmTextBox.Text) * valuenm * valuenm * 1e-7; 
+                    CalculateValues();
                 }
                 catch
                 {
