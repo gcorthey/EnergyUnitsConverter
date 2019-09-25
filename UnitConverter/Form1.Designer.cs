@@ -73,12 +73,28 @@
             this.sTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.mTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.bandwidthCmTextBox = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.wavenumberBandTextBox = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.bandwidthNmTextBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.wavelengthBandTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVisible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visibleSpectrumPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gralSpectrumPictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // eVTextBox
@@ -432,7 +448,7 @@
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(148, 19);
+            this.richTextBox1.Location = new System.Drawing.Point(148, 24);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(500, 179);
@@ -444,7 +460,7 @@
             // 
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 384);
+            this.groupBox1.Location = new System.Drawing.Point(12, 468);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(806, 209);
             this.groupBox1.TabIndex = 43;
@@ -586,16 +602,186 @@
             this.mTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.mTextBox.TextChanged += new System.EventHandler(this.mTextBox_TextChanged);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.bandwidthCmTextBox);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.wavenumberBandTextBox);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.bandwidthNmTextBox);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.label33);
+            this.groupBox3.Controls.Add(this.label35);
+            this.groupBox3.Controls.Add(this.wavelengthBandTextBox);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(12, 372);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(806, 83);
+            this.groupBox3.TabIndex = 49;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Bandwidth converter ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(384, 49);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(16, 13);
+            this.label28.TabIndex = 47;
+            this.label28.Text = "-1";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(363, 51);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(26, 16);
+            this.label29.TabIndex = 46;
+            this.label29.Text = "cm";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(657, 53);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(16, 13);
+            this.label27.TabIndex = 45;
+            this.label27.Text = "-1";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(636, 53);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(26, 16);
+            this.label23.TabIndex = 44;
+            this.label23.Text = "cm";
+            // 
+            // bandwidthCmTextBox
+            // 
+            this.bandwidthCmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bandwidthCmTextBox.Location = new System.Drawing.Point(500, 51);
+            this.bandwidthCmTextBox.Name = "bandwidthCmTextBox";
+            this.bandwidthCmTextBox.Size = new System.Drawing.Size(130, 22);
+            this.bandwidthCmTextBox.TabIndex = 43;
+            this.bandwidthCmTextBox.Text = "0";
+            this.bandwidthCmTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bandwidthCmTextBox.TextChanged += new System.EventHandler(this.BandwidthCmTextBox_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(411, 53);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(83, 16);
+            this.label24.TabIndex = 42;
+            this.label24.Text = "Bandwidth:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(117, 51);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(103, 16);
+            this.label25.TabIndex = 41;
+            this.label25.Text = "Wavenumber:";
+            // 
+            // wavenumberBandTextBox
+            // 
+            this.wavenumberBandTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wavenumberBandTextBox.Location = new System.Drawing.Point(227, 48);
+            this.wavenumberBandTextBox.Name = "wavenumberBandTextBox";
+            this.wavenumberBandTextBox.Size = new System.Drawing.Size(130, 22);
+            this.wavenumberBandTextBox.TabIndex = 39;
+            this.wavenumberBandTextBox.Text = "0";
+            this.wavenumberBandTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.wavenumberBandTextBox.TextChanged += new System.EventHandler(this.WavenumberBandTextBox_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(636, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(26, 16);
+            this.label22.TabIndex = 38;
+            this.label22.Text = "nm";
+            // 
+            // bandwidthNmTextBox
+            // 
+            this.bandwidthNmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bandwidthNmTextBox.Location = new System.Drawing.Point(500, 19);
+            this.bandwidthNmTextBox.Name = "bandwidthNmTextBox";
+            this.bandwidthNmTextBox.Size = new System.Drawing.Size(130, 22);
+            this.bandwidthNmTextBox.TabIndex = 37;
+            this.bandwidthNmTextBox.Text = "0";
+            this.bandwidthNmTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bandwidthNmTextBox.TextChanged += new System.EventHandler(this.BandwidthNmTextBox_TextChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(411, 21);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(83, 16);
+            this.label32.TabIndex = 27;
+            this.label32.Text = "Bandwidth:";
+            this.label32.Click += new System.EventHandler(this.Label32_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(117, 19);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(94, 16);
+            this.label33.TabIndex = 26;
+            this.label33.Text = "Wavelength:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(363, 21);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(26, 16);
+            this.label35.TabIndex = 21;
+            this.label35.Text = "nm";
+            // 
+            // wavelengthBandTextBox
+            // 
+            this.wavelengthBandTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wavelengthBandTextBox.Location = new System.Drawing.Point(227, 16);
+            this.wavelengthBandTextBox.Name = "wavelengthBandTextBox";
+            this.wavelengthBandTextBox.Size = new System.Drawing.Size(130, 22);
+            this.wavelengthBandTextBox.TabIndex = 20;
+            this.wavelengthBandTextBox.Text = "533";
+            this.wavelengthBandTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.wavelengthBandTextBox.TextChanged += new System.EventHandler(this.WavelengthBandTextBox_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 607);
+            this.ClientSize = new System.Drawing.Size(838, 693);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(854, 645);
-            this.MinimumSize = new System.Drawing.Size(854, 645);
+            this.MaximumSize = new System.Drawing.Size(854, 731);
+            this.MinimumSize = new System.Drawing.Size(854, 731);
             this.Name = "Form1";
             this.Text = "Energy Units";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -606,6 +792,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -656,6 +844,21 @@
         private System.Windows.Forms.TextBox sTextBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox mTextBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox bandwidthNmTextBox;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox wavelengthBandTextBox;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox bandwidthCmTextBox;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox wavenumberBandTextBox;
+        private System.Windows.Forms.Label label22;
     }
 }
 
