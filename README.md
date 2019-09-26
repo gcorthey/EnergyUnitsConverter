@@ -1,4 +1,4 @@
-![wave](Figures/icon.png)
+![wave](Figures/icon.png | width=250x250)
 # EnergyUnitsConverter
 This is a code with GUI to convert between different units commonly used in the fields of photonics, spectroscopy and others. It is written in C# and was built using Visual Studio 2010 and the .NET Framework 4. You can find the ready-to-use executables under the [release section](https://github.com/gcorthey/EnergyUnitsConverter/releases). 
 
