@@ -441,7 +441,7 @@
             this.asTextBox.TabIndex = 41;
             this.asTextBox.Text = "0";
             this.asTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.asTextBox.TextChanged += new System.EventHandler(this.nsTextBox_TextChanged);
+            this.asTextBox.TextChanged += new System.EventHandler(this.asTextBox_TextChanged);
             // 
             // richTextBox1
             // 

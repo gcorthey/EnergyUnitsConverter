@@ -482,13 +482,13 @@ namespace UnitConverter
             }
         }
 
-        private void nsTextBox_TextChanged(object sender, EventArgs e)
+        private void asTextBox_TextChanged(object sender, EventArgs e)
         {
             if (asTextBox.Focused)
             {
                 try
                 {
-                    valuenm = Convert.ToDouble(asTextBox.Text) * 1e-9 * speedOfLight * 1e9;
+                    valuenm = Convert.ToDouble(asTextBox.Text) * 1e-18 * speedOfLight * 1e9;
                     CalculateValues();
                 }
                 catch
