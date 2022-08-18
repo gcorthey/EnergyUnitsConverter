@@ -339,7 +339,7 @@ namespace UnitConverter
                 }
             }
 
-            wavelengthBandTextBox.Text = ATextBox.Text;
+            wavelengthBandTextBox.Text = nmTextBox.Text;
         }
 
         private void meVTextBox_TextChanged(object sender, EventArgs e)
